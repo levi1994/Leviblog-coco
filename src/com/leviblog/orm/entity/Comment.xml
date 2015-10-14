@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.leviblog.orm.entity">
+	<class name="Comment"  table="comment">
+		<id name="com_id" type="string" column="com_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="com_article_id" type="string" column="com_article_id"></property>
+		<property name="com_parent" type="string" column="com_parent"></property>
+		<property name="com_content" type="string" column="com_content"></property>
+		<property name="com_name" type="string" column="com_name"></property>
+		<property name="com_toname" type="string" column="com_toname"></property>
+		<property name="com_depth" type="integer" column="com_depth"></property>
+		<property name="com_datetime" type="string" column="com_datetime"></property>
+	</class>
+</hibernate-mapping>

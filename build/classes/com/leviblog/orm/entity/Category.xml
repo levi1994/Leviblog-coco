@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.leviblog.orm.entity">
+	<class name="Category"  table="category">
+		<id name="category_id" type="string" column="category_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="category_name" type="string" column="category_name"></property>
+		<property name="category_des" type="string" column="category_des"></property>
+		<property name="category_type" type="string" column="category_type"></property>
+		<property name="category_img" type="string" column="category_img"></property>
+	</class>
+</hibernate-mapping>

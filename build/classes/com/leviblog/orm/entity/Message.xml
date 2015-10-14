@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.leviblog.orm.entity">
+	<class name="Message"  table="message">
+		<id name="mes_id" type="string" column="mes_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="mes_theme" type="string" column="mes_theme"></property>
+		<property name="mes_content" type="string" column="mes_content"></property>
+		<property name="mes_name" type="string" column="mes_name"></property>
+		<property name="mes_connect" type="string" column="mes_connect"></property>
+		<property name="mes_datetime" type="string" column="mes_datetime"></property>
+	</class>
+</hibernate-mapping>

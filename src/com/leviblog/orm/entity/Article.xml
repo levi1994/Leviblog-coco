@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.leviblog.orm.entity">
+	<class name="Article"  table="article">
+		<id name="art_id" type="string" column="art_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="art_type" type="string" column="art_type"></property>
+		<property name="art_category" type="string" column="art_category"></property>
+		<property name="art_title" type="string" column="art_title"></property>
+		<property name="art_des" type="string" column="art_des"></property>
+		<property name="art_author" type="string" column="art_author"></property>
+		<property name="art_content" type="string" column="art_content"></property>
+		<property name="art_readtime" type="integer" column="art_readtime"></property>
+		<property name="art_like" type="integer" column="art_like"></property>
+		<property name="art_img" type="string" column="art_img"></property>
+		<property name="art_datetime" type="string" column="art_datetime"></property>
+	</class>
+</hibernate-mapping>

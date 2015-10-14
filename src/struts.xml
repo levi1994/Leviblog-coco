@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	
+	<package name="redirect" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+		 <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<action name="index" class="com.leviblog.control.action.RedirectAction" method="getIndex">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="main" class="com.leviblog.control.action.RedirectAction"
+			method="getMain">
+			<result name="success">main.jsp</result>
+		</action>
+		<action name="article" class="com.leviblog.control.action.RedirectAction"
+			method="getArticle">
+			<result name="success">article.jsp</result>
+		</action>
+		<action name="category" class="com.leviblog.control.action.RedirectAction"
+			method="getCategory">
+			<result name="success">main.jsp</result>
+		</action>
+	</package>
+
+	<package name="ajax" namespace="/" extends="json-default">
+		<action name="message" class="com.leviblog.control.action.LeaveMessageAction"
+			 method="leaveMessage">
+			<result type="json" name="success">
+				<param name="root">1</param>
+			</result>
+		</action>
+		<action name="comment" class="com.leviblog.control.action.CommentAction"
+			 method="leaveComment">
+			<result type="json" name="success">
+				<param name="root">1</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="search" namespace="/" extends="struts-default">
+		<action name="search" class="com.leviblog.control.action.SearchAction">
+			<result name="success">main.jsp</result>
+		</action>
+	</package>
+	
+
+	<!-- Add packages here -->
+
+</struts>
